@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <form class="js-speaker-form form">
+      <div class="form-field">
+        <label for="name" class="form-label">Ім'я</label>
+        <input
+          class="form-input"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Іван Іванович"
+          autofocus
+        />
+      </div>
+      <div class="form-field">
+        <label for="tel" class="form-label">Телефон</label>
+        <input
+          class="form-input"
+          type="tel"
+          name="tel"
+          id="tel"
+          placeholder="+38**-***-**-**"
+        />
+      </div>
+      <div class="form-field">
+        <label for="email" class="form-label">Пошта</label>
+        <input
+          class="form-input"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="mymail@mail.com"
+        />
+      </div>
+      <!-- role - група однакових елементів -->
+      <div role="group" class="group">
+        <b class="group-title">Оберіть тему конференції</b>
+        <ul class="group-options">
+          <li>
+            <input
+              type="checkbox"
+              name="topic"
+              id="html"
+              value="html"
+              checked
+            />
+            <label for="html">HTML</label>
+          </li>
+          <li>
+            <input type="checkbox" name="topic" id="css" value="css" checked />
+            <label for="css">CSS</label>
+          </li>
+          <li>
+            <input type="checkbox" name="topic" id="js" value="js" />
+            <label for="js">JavaScript</label>
+          </li>
+        </ul>
+      </div>
+      <div role="group" class="group">
+        <b class="group-title">Рівень кваліфікації</b>
+        <ul class="group-experience">
+          <li>
+            <input
+              type="radio"
+              name="experience"
+              id="junior"
+              value="junior"
+              checked
+            />
+            <label for="junior">Junior</label>
+          </li>
+          <li>
+            <input type="radio" name="experience" id="middle" value="middle" />
+            <label for="middle">Middle</label>
+          </li>
+          <li>
+            <input type="radio" name="experience" id="senior" value="senior" />
+            <label for="senior">Senior</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-field">
+        <label for="date">Дата конференції</label>
+        <input
+          type="datetime-local"
+          name="date"
+          id="date"
+          min="2022-04-01T10:00"
+          max="2022-04-14T17:00"
+        />
+      </div>
+
+      <label for="pdf">Загрузіть матеріали</label>
+      <input type="file" name="pdf" id="pdf" />
+
+      <label for="comment">Залиште коментар</label>
+      <textarea
+        name="comment"
+        id="comment"
+        rows="10"
+        placeholder="Уточніть деталі"
+      ></textarea>
+
+      <input type="checkbox" name="policy" id="policy" />
+      <label for="policy">Даю згоду на обробку персональних даних</label>
+
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
+  </body>
+</html>

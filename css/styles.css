@@ -1,0 +1,60 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: black;
+}
+
+.form {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  outline: 1px solid tomato;
+}
+
+.form-field {
+  outline: 1px solid greenyellow;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px solid black;
+}
+
+.form-input::placeholder {
+  color: grey;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+.group-options {
+  margin: 0;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.group-options li {
+  display: flex;
+  align-items: center;
+}
+
+.group-experience {
+  margin: 0;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+button {
+  width: 80px;
+}
+
+textarea {
+  resize: none;
+}
